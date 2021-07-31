@@ -1,0 +1,810 @@
+/*--------------------------------------*/
+/* BASIC SETUP */ /* orange color #e67e22 */
+/*--------------------------------------*/
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+html,body
+{
+background-color: #fff;
+    color: #555;
+    font-family: 'Lato','Ariel', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+.clearfix {zoom: 1;}
+.clearfix:after
+{
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+/*--------------------------------------*/
+/* REUSABLE COMPONENTS*/
+/*--------------------------------------*/
+.row
+{
+    max-width:1400px;
+    margin: 0 auto;
+}
+
+section
+{
+    padding: 80px 0;
+}
+/*--------------------------------------*/
+/* HEADINGS */
+/*--------------------------------------*/
+
+h1,h2,h3{    
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+h1
+{
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 240%;
+    word-spacing: 4px;
+}
+
+h2
+{
+    font-size:180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 350;
+}
+
+h3
+{
+    font-size: 110%;
+    margin-bottom: 15px;
+}
+
+h2:after
+{
+    display: block;
+    height: 2px;
+    background-color: #e67e22;
+    content: " ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+/*--------------------------------------*/
+/* ICONS */
+/*--------------------------------------*/
+
+.icon-big {
+    font-size: 350%;
+    display:block;
+    color: #e67e22;
+}
+
+.icon-small
+{
+    display: inline-block;
+    width:30px;
+    text-align: center;
+    color: #e67e22;
+    font-size: 120%;
+    line-height: 120%; /*after adding the last 3 lines here,the icons and the adjacent text aligns.this is a secret way to do it.*/
+    vertical-align: middle;
+    margin-top: -4px;/* to pull icons upward*/
+    padding-right: 2%;
+}
+
+/*--------------------------------------*/
+/* LINKS */
+/*--------------------------------------*/
+
+a:link,
+a:visited
+{
+    text-decoration: none;
+    color: #e67e22;
+    border-bottom: #e67e22;
+    padding-bottom: 1px;
+}
+
+a:hover,
+a:active
+{
+    color: #555;
+    border-bottom:1px solid #e67e22;
+    
+}
+
+/*--------------------------------------*/
+/* BUTTONS */
+/*--------------------------------------*/
+
+.btn:link,
+.btn:visited{
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    margin-right: 30px;
+    transition: background-color 0.2s,border 0.2s color 0.2s;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited{
+    border: 1px solid #e67e22;
+    color:#e67e22;
+    
+}
+
+.btn-ghost:hover,
+.btn-ghost:active
+{
+    background-color:#e67e22; transition: background-color 1s;
+    color: white;
+}
+
+input[type=submit]
+{
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    margin-right: 30px;
+    transition: background-color 0.2s,border 0.2s color 0.2s;
+    background-color: #e67e22;
+    border: 1px solid #e67e22;
+    color: rgb(0, 0, 0);
+}
+
+input[type=submit]:hover,
+input[type=submit]:active
+{
+    background-color:rgba(47, 46, 46, 0.07); transition: background-color 1s;
+    color: #e67e22;
+}
+
+
+.btn-full:link,
+.btn-full:visited{
+   background-color: #e67e22;
+    border: 1px solid #e67e22; 
+     color: rgb(0, 0, 0);
+}
+
+.btn-full:hover,
+.btn-full:active
+{
+    background-color:rgba(47, 46, 46, 0.47); transition: background-color 1s;
+    color: #e67e22;
+}
+
+.btn-app:link,
+.btn-app:visited
+{
+    border: 0;/* to make sure that the global definition for link to turn orange when hover, should not happen here*/ 
+}
+
+.btn-app img
+{
+    max-width: 172px;
+   max-height: 60px;
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+}
+
+
+/*--------------------------------------*/
+/* HEADER */
+/*--------------------------------------*/
+
+header
+{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url(img/hero-min.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.hero-text-box {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 0 1%;
+}
+
+.logo{
+    width:auto;
+    height: 100px;
+    float:left;
+    margin-top: 20px;
+}
+
+.logo-black{
+    display: none;/*to hide this image in the normal state*/
+    width: auto;
+    height: 50px;
+    float:left;
+    margin:5px 0;
+}
+/*--------------------------------------*/
+/* MAIN NAVIGATION */
+/*--------------------------------------*/
+
+.main-nav {
+    float: right;
+    list-style: none;
+    margin-top: 55px;
+    
+}
+.main-nav li
+{
+    display: inline-block;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited 
+{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom:  2px solid transparent;
+    transition: border-bottom 0.75s;
+    padding-bottom: 6px;
+}
+.main-nav li a:hover ,
+.main-nav li a:active 
+{
+    border-bottom:  2px solid #e67e22;
+}
+
+/*--------------------------------------*/
+/* mobile NAVIGATION */
+/*--------------------------------------*/
+
+.mobile-nav-icon {
+    float: right;
+    margin-top: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.mobile-nav-icon i
+{
+    font-size: 200%;
+    color: white;
+}
+/*--------------------------------------*/
+/* STICKY NAVIGATION */
+/*--------------------------------------*/
+
+.sticky
+{
+    position: fixed;/*so that navigation remains fixed irrespective of scrolling*/
+    top: 0;
+    left: 0;/*top and left are 0 so that sticky nav remains on the top left side only*/
+    width: 100%;/*to occupy whole browser width*/
+    background-color: rgba(255, 255, 255, 0.95);  
+    box-shadow: 0 2px 2px #e2e2e2;/*x,y,z axis and blur attributes*/
+    z-index: 9999;/*we include this cuz w/o this sticky nav appears behind the food image in 3rd page.by this we make this .sticky appear in front of all elements and not stacked behind anything.9999 is max value*/
+}
+
+.sticky .main-nav { margin-top: 18px; }
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited 
+{
+    color: #555;
+    padding: 16px 0;
+}
+
+.sticky .logo { display: none; }
+.sticky .logo-black { display: block;cursor: pointer; padding-left: 50px; }
+/*--------------------------------------*/
+/* FEATURES */
+/*--------------------------------------*/
+
+.section-features long-copy
+{
+    margin-bottom: 3%;
+}
+
+.section-features{
+    margin-left: 1%;
+    margin-left: 1%;
+}
+
+/*--------------------------------------*/
+/* PARAGRAPHS */
+/*--------------------------------------*/
+
+.long-copy
+{
+   line-height: 145%;
+    width: 70%;
+    margin-left: 15%;
+    text-align: center;
+    
+}
+
+.box
+{
+    padding: 1%;
+   margin-left: 1%;
+}
+
+.box p
+{
+    font-size: 90%;
+    line-height: 145%;
+}
+
+/*--------------------------------------*/
+/* MEALS */
+/*--------------------------------------*/
+
+.section-meals {
+    padding: 0;
+}
+
+.meals-showcase {
+    list-style: none;
+    width: 100%;
+}
+
+.meals-showcase li
+{
+    display: block;
+    float: left;
+    width: 25%;
+}
+
+.meal-photo {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+}
+ .meal-photo img 
+{
+    opacity: 0.7;
+    width: 100%;
+    height: auto;
+    transform: scale(1.15);
+    transition: transform 0.5s,opacity 0.5s ;
+}
+
+.meal-photo img:hover
+{
+    opacity:1;
+    transform: scale(1.03) ;  /*here the scale is 1.03 because to eliminate the bottom white line that occurs when scale is at 1*/
+   
+}
+
+/*--------------------------------------*/
+/* HOW IT WORKS */
+/*--------------------------------------*/
+
+.steps-box
+{
+  margin-top: 30px;
+}
+
+.steps-box img
+{
+    max-width: 30%;
+}
+
+.section-steps
+{
+    background-color: #f4f4f4;
+    margin-bottom: 5%;
+}
+.steps-box:first-child
+{
+    text-align: right;
+    padding-right: 3%;
+    margin-top: 30px;
+}
+
+.steps-box:last-child
+{
+    padding-left: 3%;
+    margin-top: 70px;
+}
+
+.app-screen
+{
+    width: 40%;
+    margin-left: 40%;
+}
+
+.works-step
+{
+    margin-bottom: 50px;
+}
+
+.works-step:last-of-type
+{
+    margin-bottom: 80px;
+}
+
+.works-step div
+{
+    color: #e67e22;
+    border: 2px solid  #e67e22;
+    display: inline-block;/* so that element doesnt force line break and the number can be side by side with the text*/
+    border-radius: 50%;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    padding: 5px;
+    float: left;
+    font-size: 150%;
+    margin-right: 25px;
+}
+
+.city-photo .img {
+   width: 400px;
+    height: auto;
+    margin: 0;
+    float: left; 
+}
+.section-cities {
+    padding-top: 0;    
+}
+
+
+/*--------------------------------------*/
+/* CITIES */
+/*--------------------------------------*/
+
+.box img
+{
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.city-feature
+{
+    margin-bottom: 5px;
+}
+
+/*--------------------------------------*/
+/* CUSTOMER TESTIMONIALS */
+/*--------------------------------------*/
+
+blockquote
+{
+    line-height: 145%;
+    padding: 2%;
+    font-style: italic;
+    position: relative;
+}
+
+blockquote:before
+{
+    content: "\201C";
+    font-size: 500%;
+    display: block;
+    position: absolute;/* in order to make the quotes position top,we need to make its position absolute,for which the parent element's(blockquote) postion should be made relative*/ 
+    top: -5px;left: -5px;
+}
+
+cite img
+{
+   vertical-align: middle;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 15px;
+    
+}
+
+cite
+{
+    font-size: 90%;
+    margin-top: 25px;
+    display: block;
+    margin-left: 9px;
+}
+
+.section-testimonials 
+{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)),url(img/spiced-chicken-spinach-sweet-potato-stew.jpg);
+    background-size: cover;
+    color: #fff; 
+    background-attachment: fixed;padding-left: 15px;
+}
+
+/*--------------------------------------*/
+/* SIGN UP */
+/*--------------------------------------*/
+
+.section-plans {
+    background-color: #f4f4f4;
+}
+
+.plan-box {
+    background-color: white;
+    border-radius: 5px;
+    width: 90%;
+    margin-left: 5%;
+    box-shadow: 0 2px 2px #d4d1d1; /* the attributes are x-axis offset,y-axis offset, blur and colour*/
+}
+
+.plan-box div
+{
+    padding: 15px;
+    border-bottom: 1px solid #e8e8e8;
+}
+.plan-box div:first-child
+{
+    background-color: #fcfcfc;/* the next 2 statements are to slightly round off the top edges of box which were rounded initially but after declaration of first child it got back to its initial state*/
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.plan-box div:last-child
+{
+    text-align: center;
+    border: 0;
+}
+.plan-price
+{
+    font-size: 300% !important;
+    font-weight: 300;
+    margin-bottom: 10px;
+    color: #e67e22;
+}
+
+.plan-price span /*all attributes of this class will be a sub-attribute of parent class plan-price*/
+{
+    font-size: 40%;
+    font-weight: 300;
+}
+
+.plan-price-meal
+{
+    font-size: 80%;
+    
+}
+
+.plan-box ul{
+    list-style: none;
+}
+
+.plan-box ul li
+{
+    padding:5px 0;
+}
+
+/*--------------------------------------*/
+/* FORM */
+/*--------------------------------------*/
+
+
+.contact-form {
+    width: 90%;
+    margin: 0 auto;
+}
+
+input[type=text],input[type=email],select,textarea
+{
+    width: 50%;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    margin: 0px 0 20px 0%; 
+    font-size: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px
+}
+
+input[type=checkbox]
+{
+    margin: 10px 5px 10px 0;
+}
+
+textarea
+{
+    height: 100px;font-size: 17px;
+    font-weight: 100;
+}
+
+*:focus{outline: none;}
+
+input[type=submit]
+{
+    padding-top: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+input::placeholder,[type=value]
+{
+    font-size: 15px;
+    color: rgba(101, 101, 101, 0.79);
+}
+ /*--------------------------------------*/
+/* MAPS */
+/*--------------------------------------*/
+
+.map-box{
+    width: 100%;
+    height: 560px;
+    position: relative;
+}
+.map-box>div:first-child{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10em;
+    margin-top: 5px;
+}
+.map-box img {
+    width: 25em;
+    height: 25em;
+    border-radius: 2%;
+}
+
+.map
+{
+    width: 100%;
+    height: 560px;
+    z-index: 0;
+}
+
+.form-box
+{
+    width: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 10;
+    height: 560px;
+    padding-top: 40px;
+}
+
+/*--------------------------------------*/
+/* FOOTER */
+/*--------------------------------------*/
+
+footer
+{
+    background-color: rgb(20, 0, 0);
+    padding: 10px;
+    font-size: 80%;
+}
+
+.footer-nav
+{
+    list-style: none;
+    float: left;
+}
+
+.social-links
+{
+    list-style: none;
+    float: right;
+}
+
+.footer-nav li,
+.social-links li
+{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-nav li:last-child,
+.social-links li:last-child
+{
+    margin-right: 0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited
+{
+    text-decoration: none;
+    border-bottom: 0;
+    color: #888;
+    transition: color 0.2s;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active
+{
+    color: #ddd;
+}
+
+.social-links li a:link,
+.social-links li a:visited
+{
+    font-size: 170%;
+}
+
+.ion-social-facebook,
+.ion-social-twitter,
+.ion-social-instagram-outline,
+.ion-social-linkedin
+{
+    transition: color 0.2s;
+}
+
+.ion-social-facebook:hover
+{
+    color: #3b5998;
+}
+
+.ion-social-twitter:hover
+{
+    color: #00aced;
+}
+
+.ion-social-instagram-outline:hover
+{
+    color: #517fa4;
+}
+
+.ion-social-linkedin:hover
+{
+    color: #007bb6;
+}
+
+footer p
+{
+    color: #888;
+    text-align: center;
+    margin-top: 5px;
+}
+
+/*--------------------------------------*/
+/* ANIMATIONS */
+/*--------------------------------------*/
+
+.js--wp-1,.js--wp-3
+{
+    opacity: 0;/*to make element invisible*/
+    animation-duration: 1s;
+}
+
+.js--wp-1.animated,
+.js--wp-3.animated 
+{
+    opacity: 1;
+}
+
+.js--wp-2.animated,
+.js--wp-3.animated,
+.js--wp-4.animated
+{
+    animation-duration: 1s;
+}
+
+
